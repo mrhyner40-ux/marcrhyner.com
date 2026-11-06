@@ -1,97 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marc Rhyner</title>
-  <style>
-    :root {
-      --text: #1a1a1a;
-      --muted: #666666;
-      --bg: #ffffff;
-      --link: #0044cc;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text: #e6e6e6;
-        --muted: #999999;
-        --bg: #121212;
-        --link: #66aaff;
-      }
-    }
-    body {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      line-height: 1.6;
-      color: var(--text);
-      background-color: var(--bg);
-      margin: 0;
-      padding: 3rem 1.5rem;
-      display: flex;
-      justify-content: center;
-    }
-    main {
-      max-width: 580px;
-      width: 100%;
-    }
-    h1 {
-      font-size: 1.75rem;
-      font-weight: normal;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-    }
-    .muted {
-      color: var(--muted);
-    }
-    h2 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-      padding-bottom: 0.25rem;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <h1>Marc Rhyner</h1>
-    <p class="muted">Creative Hobbiest &middot; Systems &amp; Tech Enthusiast</p>
+---
+layout: default
+---
 
-    <p>
-      Brief introduction about yourself goes here. Keep it to one or two concise paragraphs outlining what you do, what you are building, or what you are interested in.
-    </p>
+<p>
+  Brief introduction about yourself goes here. Keep it to one or two concise paragraphs outlining what you do, what you are building, or what you are interested in.
+</p>
 
-    <h2>Projects &amp; Focus</h2>
-    <ul>
-      <li><a href="#" target="_blank" rel="noopener">Project One</a> &mdash; Brief description of the project.</li>
-      <li><a href="#" target="_blank" rel="noopener">Project Two</a> &mdash; Another initiative or tool.</li>
-    </ul>
+<h2>Projects &amp; Focus</h2>
+<ul class="links">
+  <li><a href="#" target="_blank" rel="noopener">Project One</a> &mdash; Brief description of the project.</li>
+  <li><a href="#" target="_blank" rel="noopener">Project Two</a> &mdash; Another initiative or tool.</li>
+</ul>
 
-    <h2>Contact &amp; Links</h2>
-    <ul>
-      <li><a href="mailto:marc@marcrhyner.com">Email</a></li>
-      <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
-    </ul>
-  </main>
-</body>
-</html>
+<h2>Contact &amp; Links</h2>
+<ul class="links">
+  <li><a href="mailto:marc@marcrhyner.com">Email</a></li>
+  <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+</ul>

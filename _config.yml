@@ -1,0 +1,15 @@
+title: Marc Rhyner
+description: Creative Hobbyist · Systems & Tech Enthusiast
+url: "https://marcrhyner.com"
+baseurl: ""
+
+# Supported GitHub Pages theme (see notes/middle11.md for the list)
+theme: jekyll-theme-minimal
+
+# Keep these out of the published site
+exclude:
+  - notes/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
