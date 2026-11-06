@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="MR monogram">
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- frame -->
+    <rect x="12" y="12" width="176" height="176" stroke="#f2f2f2" stroke-opacity="0.35" stroke-width="3"/>
+    <!-- M and R share the middle stem -->
+    <path d="M46 140 V60 L76 108 L106 60 V140" stroke="#f2f2f2" stroke-width="10"/>
+    <path d="M106 60 H134 A20 20 0 0 1 134 100 H106" stroke="#f2f2f2" stroke-width="10"/>
+    <!-- R leg in the accent color -->
+    <path d="M126 100 L154 140" stroke="#f2a93b" stroke-width="10"/>
+  </g>
+</svg>

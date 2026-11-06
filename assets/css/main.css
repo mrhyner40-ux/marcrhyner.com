@@ -3,6 +3,8 @@
   --text: #f2f2f2;
   --muted: #8a8d93;
   --line: rgba(255, 255, 255, 0.14);
+  --accent: #f2a93b;
+  --grid: rgba(140, 170, 210, 0.07);
 }
 
 * {
@@ -16,6 +18,7 @@ body {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -23,6 +26,20 @@ body {
   color: var(--text);
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Blueprint grid with a soft amber glow, fading out toward the edges */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(242, 169, 59, 0.08), transparent 45%),
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 75%);
 }
 
 .hero {
@@ -36,9 +53,9 @@ body {
 }
 
 .mark {
-  width: clamp(110px, 22vh, 160px);
+  width: clamp(110px, 22vh, 150px);
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .name {
@@ -46,15 +63,15 @@ body {
   font-size: clamp(1.6rem, 5vw, 2.6rem);
   font-weight: 600;
   letter-spacing: 0.4em;
-  /* letter-spacing adds space after the last letter too; offset it so the name stays centered */
+  /* letter-spacing adds space after the last letter too; offset it so text stays centered */
   margin-right: -0.4em;
   text-transform: uppercase;
 }
 
 .tagline {
-  margin: 1rem 0 0;
+  margin: 1rem -0.3em 0 0;
   font-size: 0.8rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -63,7 +80,7 @@ body {
   width: 48px;
   margin: 2rem auto;
   border: 0;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
 }
 
 .button {
@@ -75,12 +92,13 @@ body {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .button:hover,
 .button:focus-visible {
-  background: var(--text);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--bg);
 }
 
@@ -90,4 +108,34 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--muted);
+}
+
+/* Load animation: each piece fades up in turn */
+.hero > *,
+.footer {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero > :nth-child(2) { animation-delay: 0.15s; }
+.hero > :nth-child(3) { animation-delay: 0.3s; }
+.hero > :nth-child(4) { animation-delay: 0.45s; }
+.hero > :nth-child(5) { animation-delay: 0.6s; }
+.footer { animation-delay: 0.8s; }
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero > *,
+  .footer {
+    animation: none;
+  }
 }

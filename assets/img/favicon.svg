@@ -1,14 +1,11 @@
-<svg style="background:#0e0f11" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="#f2f2f2" role="img" aria-label="Rhino head logo">
-  <!-- ears -->
-  <polygon points="32,44 62,66 50,76"/>
-  <polygon points="168,44 138,66 150,76"/>
-  <!-- cheeks -->
-  <polygon points="52,82 84,74 76,122 64,134 48,108"/>
-  <polygon points="148,82 116,74 124,122 136,134 152,108"/>
-  <!-- horn: broad base on the nose, concave sides up to the tip -->
-  <path d="M80 128 Q95 76 100 16 Q105 76 120 128 Z"/>
-  <!-- muzzle with nostril cut-outs -->
-  <path fill-rule="evenodd" d="M78 136 L122 136 L114 162 L100 172 L86 162 Z
-                               M88 144 L96 148 L90 153 Z
-                               M112 144 L104 148 L110 153 Z"/>
+<svg style="background:#0e0f11" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="MR monogram">
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- frame -->
+    <rect x="12" y="12" width="176" height="176" stroke="#f2f2f2" stroke-opacity="0.35" stroke-width="3"/>
+    <!-- M and R share the middle stem -->
+    <path d="M46 140 V60 L76 108 L106 60 V140" stroke="#f2f2f2" stroke-width="10"/>
+    <path d="M106 60 H134 A20 20 0 0 1 134 100 H106" stroke="#f2f2f2" stroke-width="10"/>
+    <!-- R leg in the accent color -->
+    <path d="M126 100 L154 140" stroke="#f2a93b" stroke-width="10"/>
+  </g>
 </svg>
