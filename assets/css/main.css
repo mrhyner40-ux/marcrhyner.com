@@ -22,7 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--bg);
+  /* faint concrete-like grain over the dark background */
+  background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
   color: var(--text);
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,6 +41,25 @@ body::before {
     linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 40px 40px;
   -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 75%);
   mask-image: radial-gradient(ellipse at 50% 45%, #000 30%, transparent 75%);
+}
+
+/* Large faded rhino behind everything */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("../img/rhino-backdrop.svg") center 55% / min(105vh, 115vw) no-repeat;
+  opacity: 0.06;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 35%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 35%, transparent 72%);
+  animation: backdrop-in 2.4s ease-out both;
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 }
 
 .hero {
@@ -135,7 +155,8 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .hero > *,
-  .footer {
+  .footer,
+  .backdrop {
     animation: none;
   }
 }

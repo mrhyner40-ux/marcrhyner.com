@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="#f2f2f2">
+  <!-- Original shard-style rhino head (front view), drawn for marcrhyner.com -->
+  <!-- ears -->
+  <polygon points="96,70 150,120 132,140 92,108"/>
+  <polygon points="304,70 250,120 268,140 308,108"/>
+  <!-- brow plates -->
+  <polygon points="158,138 184,150 184,172 150,160"/>
+  <polygon points="242,138 216,150 216,172 250,160"/>
+  <!-- eyes -->
+  <polygon points="122,190 154,200 128,206"/>
+  <polygon points="278,190 246,200 272,206"/>
+  <!-- cheeks -->
+  <polygon points="116,218 162,232 168,300 132,278"/>
+  <polygon points="284,218 238,232 232,300 268,278"/>
+  <!-- horn: broad base on the nose, concave sides -->
+  <path d="M176 252 Q194 160 200 64 Q206 160 224 252 Z"/>
+  <!-- muzzle with nostril cut-outs -->
+  <path fill-rule="evenodd" d="M170 264 H230 L218 312 L200 324 L182 312 Z
+                               M184 280 L196 288 L186 294 Z
+                               M216 280 L204 288 L214 294 Z"/>
+  <!-- chin -->
+  <polygon points="186,334 214,334 200,348"/>
+</svg>
