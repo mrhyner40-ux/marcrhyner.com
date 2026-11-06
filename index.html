@@ -2,18 +2,13 @@
 layout: default
 ---
 
-<p>
-  Brief introduction about yourself goes here. Keep it to one or two concise paragraphs outlining what you do, what you are building, or what you are interested in.
-</p>
+<main class="hero">
+  <img class="mark" src="{{ '/assets/img/rhino-mark-white.svg' | relative_url }}" alt="" width="160" height="160">
 
-<h2>Projects &amp; Focus</h2>
-<ul class="links">
-  <li><a href="#" target="_blank" rel="noopener">Project One</a> &mdash; Brief description of the project.</li>
-  <li><a href="#" target="_blank" rel="noopener">Project Two</a> &mdash; Another initiative or tool.</li>
-</ul>
+  <h1 class="name">Marc Rhyner</h1>
+  <p class="tagline">{{ site.description }}</p>
 
-<h2>Contact &amp; Links</h2>
-<ul class="links">
-  <li><a href="mailto:marc@marcrhyner.com">Email</a></li>
-  <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
-</ul>
+  <hr class="rule">
+
+  <a class="button" href="mailto:{{ site.email }}">Get in touch</a>
+</main>

@@ -4,3 +4,9 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
+
+# Reference images (not ours to publish)
+/img/
+
+# Local Claude preview config
+.claude/

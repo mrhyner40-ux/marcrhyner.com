@@ -1,14 +1,19 @@
 title: Marc Rhyner
 description: Creative Hobbyist · Systems & Tech Enthusiast
+email: marc@marcrhyner.com
 url: "https://marcrhyner.com"
 baseurl: ""
 
-# Supported GitHub Pages theme (see notes/middle11.md for the list)
-theme: jekyll-theme-minimal
+# No theme: the github-pages gem would otherwise default to Primer
+theme: null
+
+plugins:
+  - jekyll-seo-tag   # page title + share-preview tags via {% seo %}
 
 # Keep these out of the published site
 exclude:
   - notes/
+  - img/
   - Gemfile
   - Gemfile.lock
   - README.md

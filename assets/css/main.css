@@ -1,0 +1,93 @@
+:root {
+  --bg: #0e0f11;
+  --text: #f2f2f2;
+  --muted: #8a8d93;
+  --line: rgba(255, 255, 255, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.mark {
+  width: clamp(110px, 22vh, 160px);
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  /* letter-spacing adds space after the last letter too; offset it so the name stays centered */
+  margin-right: -0.4em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rule {
+  width: 48px;
+  margin: 2rem auto;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--text);
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
