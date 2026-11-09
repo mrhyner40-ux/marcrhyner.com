@@ -81,7 +81,7 @@ body::before {
 /* Glowing shape (WebGL). Before the script runs, or without WebGL, the MR mark shows instead. */
 .glow {
   width: min(680px, 100%);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .glow-canvas {
@@ -98,51 +98,6 @@ body::before {
 
 .glow.has-glow .glow-fallback {
   display: none;
-}
-
-.shape-picker {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-.shape-picker[hidden] {
-  display: none;
-}
-
-.shape-btn {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.shape-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linejoin: round;
-}
-
-.shape-btn:hover,
-.shape-btn:focus-visible {
-  color: var(--text);
-  border-color: var(--text);
-}
-
-.shape-btn[aria-pressed="true"] {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 
 .name {

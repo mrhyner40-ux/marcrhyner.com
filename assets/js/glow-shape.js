@@ -12,22 +12,12 @@
  *     <canvas class="glow-canvas"></canvas>
  *     <img class="glow-fallback" ...>
  *   </div>
- * Pick a shape with ?shape=star in the URL, the buttons, or a click on the canvas.
+ * Click the canvas to cycle shapes, or pick one with ?shape=star in the URL.
  */
 (function () {
   "use strict";
 
   var SHAPES = ["triangle", "square", "diamond", "hexagon", "circle", "star"];
-
-  // Small outline icons for the shape buttons (24x24 viewBox).
-  var ICONS = {
-    triangle: '<path d="M12 4 L21 19 H3 Z"/>',
-    square: '<rect x="5" y="5" width="14" height="14"/>',
-    diamond: '<path d="M12 3 L19 12 L12 21 L5 12 Z"/>',
-    hexagon: '<path d="M12 3 L19.8 7.5 V16.5 L12 21 L4.2 16.5 V7.5 Z"/>',
-    circle: '<circle cx="12" cy="12" r="8"/>',
-    star: '<path d="M12 3 L14.6 9.4 L21.5 9.9 L16.2 14.3 L17.9 21 L12 17.3 L6.1 21 L7.8 14.3 L2.5 9.9 L9.4 9.4 Z"/>'
-  };
 
   var VERT = [
     "attribute vec2 aPos;",
@@ -244,27 +234,6 @@
     var current = shapeIndex(params.get("shape") || root.getAttribute("data-shape"));
     var from = current, mix = 1, pulse = 0, morphStart = -1;
 
-    var picker = root.querySelector(".shape-picker");
-    var buttons = [];
-    if (picker) {
-      SHAPES.forEach(function (name, i) {
-        var b = document.createElement("button");
-        b.type = "button";
-        b.className = "shape-btn";
-        b.setAttribute("aria-label", name);
-        b.title = name;
-        b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[name] + "</svg>";
-        b.addEventListener("click", function () { setShape(i); });
-        picker.appendChild(b);
-        buttons.push(b);
-      });
-      picker.hidden = false;
-    }
-
-    function syncButtons() {
-      buttons.forEach(function (b, i) { b.setAttribute("aria-pressed", i === current ? "true" : "false"); });
-    }
-
     function setShape(i) {
       if (i === current) return;
       from = current;
@@ -272,11 +241,8 @@
       mix = 0;
       morphStart = -1;
       pulse = 0.9;
-      syncButtons();
       kick();
     }
-    syncButtons();
-
     canvas.addEventListener("click", function () { setShape((current + 1) % SHAPES.length); });
 
     // ---- pointer-driven light ----
