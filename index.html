@@ -3,7 +3,11 @@ layout: default
 ---
 
 <main class="hero">
-  <img class="mark" src="{{ '/assets/img/mr-mark.svg' | relative_url }}" alt="" width="160" height="160">
+  <div class="glow" data-glow data-shape="hexagon">
+    <canvas class="glow-canvas" aria-hidden="true"></canvas>
+    <img class="mark glow-fallback" src="{{ '/assets/img/mr-mark.svg' | relative_url }}" alt="" width="160" height="160">
+    <div class="shape-picker" role="group" aria-label="Choose a shape" hidden></div>
+  </div>
 
   <h1 class="name">Marc Rhyner</h1>
   <p class="tagline">{{ site.description }}</p>
